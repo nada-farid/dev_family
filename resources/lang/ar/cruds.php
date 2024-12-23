@@ -520,7 +520,7 @@ return [
             'instagram' => 'رابط الانستجرام',
             'instagram_helper' => ' ',
             'logo' => 'الشعار',
-            'logo_helper' => ' ',
+            'logo_helper'  =>  '( مقاس الصورة  المناسب العرض :304px  - الطول :164px)',
             'chairman_description' => ' كلمة الادارة',
             'chairman_description_helper' => ' ',
             'chairman_image' => ' صورة رئيس مجلس الادارة',

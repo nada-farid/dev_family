@@ -620,8 +620,8 @@
     },
     params: {
       size: 2,
-      width: 4096,
-      height: 4096
+      width: 304,
+      height: 164
     },
     success: function (file, response) {
       $('form').find('input[name="logo_white"]').remove()

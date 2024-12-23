@@ -336,5 +336,6 @@ return [
     'complaint' => 'شكوي',
     'contact' => 'تواصل معنا',
     'suggest' => 'اقتراح',
+    'Please upload logo with required dimensions' =>' من فضلك قم يرفع صورة الشعار بالمقاسات النطلوبة',
 
 ];

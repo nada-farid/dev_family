@@ -132,6 +132,7 @@ class UpdateSettingRequest extends FormRequest
         return [
             'inner_image.required' => __('global.Please upload inner image with required dimensions'),
             'about_photo.required' => __('global.Please upload about image with required dimensions'),
+            'logo.required' => __('global.Please upload logo with required dimensions'),
 
         ];
     }
