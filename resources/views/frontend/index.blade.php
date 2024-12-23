@@ -165,9 +165,10 @@
                                         <div class="author-img">
                                             <img src="{{ $project->image->getUrl() }}" alt>
                                         </div>
-                                        <h3>{{ $project->title }} </h3>
+                                        <h3>{{ Str::limit($project->title, 40) }} </h3>
+                                        
                                     </div>
-                                    <p class="just">{{ $project->short_description }}</p>
+                                    <p class="just">{{ Str::limit($project->short_description, 70) }} </p>
 
                                     <a href="{{route('frontend.project',$project->id)}}" class="btn theme-btn-s6">المزيد</a>
 
@@ -226,11 +227,11 @@
                                     <div class="entry-details">
                                         <h3>
                                             <a href="{{ route('frontend.new', $new->id) }}">
-                                                {{ $new->name }}
+                                                {{ Str::limit($new->name, 30)}}
                                             </a>
                                         </h3>
                                         <p>
-                                            {{ $new->short_description }}
+                                            {{ Str::limit($new->short_description, 75) }}
                                         </p>
                                         <a href="{{ route('frontend.new', $new->id) }}" class="btn theme-btn-s6">المزيد</a>
                                     </div>

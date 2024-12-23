@@ -62,14 +62,15 @@
                 <span class="help-block">{{ trans('cruds.news.fields.description_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="inner_image">{{ trans('cruds.news.fields.inner_image') }}</label>
-                <input class="form-control {{ $errors->has('inner_image') ? 'is-invalid' : '' }}" type="text" name="inner_image" id="inner_image" value="{{ old('inner_image', $news->inner_image) }}">
-                @if($errors->has('inner_image'))
+                <label class="required" for="inside_image">{{ trans('cruds.news.fields.inside_image') }}</label>
+                <div class="needsclick dropzone {{ $errors->has('inside_image') ? 'is-invalid' : '' }}" id="inside_image-dropzone">
+                </div>
+                @if($errors->has('inside_image'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('inner_image') }}
+                        {{ $errors->first('inside_image') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.news.fields.inner_image_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.news.fields.inside_image_helper') }} </span>
             </div>
             <div class="form-group">
                 <label class="required" for="address">{{ trans('cruds.news.fields.address') }}</label>
@@ -241,8 +242,8 @@
           }
       },
       init: function() {
-          @if (isset($new) && $new->inside_image)
-              var file = {!! json_encode($new->inside_image) !!}
+          @if (isset($news) && $news->inside_image)
+              var file = {!! json_encode($news->inside_image) !!}
               this.options.addedfile.call(this, file)
               this.options.thumbnail.call(this, file, file.preview ?? file.preview_url)
               file.previewElement.classList.add('dz-complete')

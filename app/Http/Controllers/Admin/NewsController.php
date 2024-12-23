@@ -100,15 +100,19 @@ class NewsController extends Controller
         return redirect()->route('admin.newss.index');
     }
 
-    public function edit(News $news)
+    public function edit($id)
     {
         abort_if(Gate::denies('news_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $news = News::find($id);
 
         return view('admin.newss.edit', compact('news'));
     }
 
-    public function update(UpdateNewsRequest $request, News $news)
+    public function update(UpdateNewsRequest $request, $id)
     {
+
+        $news = News::find($id);
         $news->update($request->all());
 
         if ($request->input('image', false)) {
@@ -135,15 +139,17 @@ class NewsController extends Controller
         return redirect()->route('admin.newss.index');
     }
 
-    public function show(News $news)
+    public function show($id)
     {
+        $news = News::find($id);
         abort_if(Gate::denies('news_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.newss.show', compact('news'));
     }
 
-    public function destroy(News $news)
+    public function destroy($id)
     {
+        $news = News::find($id);
         abort_if(Gate::denies('news_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $news->delete();

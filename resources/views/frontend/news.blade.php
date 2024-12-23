@@ -38,11 +38,12 @@
                                 <div class="entry-details">
                                     <h3>
                                         <a href="{{route('frontend.new',$new->id)}}">
-                                         {{$new->name}}
+                                       
+                                         {{ Str::limit($new->name, 30) }}
                                         </a>
                                     </h3>
                                     <p>
-                                       {{$new->short_description}}
+                                       {{ Str::limit($new->short_description, 75) }}
                                     </p>
                                     <a href="{{route('frontend.new',$new->id)}}" class="btn theme-btn-s6"> المزيد</a>
                                 </div>

@@ -170,20 +170,18 @@
                             <div class="widget link-widget">
 
                                 <ul>
-                                    <li><a href="#">الرئيسية </a></li>
-                                    <li><a href="#">تطوع معنا</a></li>
-                                    <li><a href="#">عن الجمعية</a></li>
-                                    <li><a href="#">الرؤية و الرسالة</a></li>
-                                    <li><a href="#">مشروعتنا</a></li>
-                                    <li><a href="#">الفئات المستفيدة</a></li>
+                                    <li><a href="{{route('frontend.home')}}">الرئيسية </a></li>
+                                    <li><a href="{{route('frontend.about')}}">عن الجمعية</a></li>
+                                    <li><a href="{{route('frontend.vision')}}">الرؤية و الرسالة</a></li>
+                                    <li><a href="{{route('frontend.projects')}}">مشروعتنا</a></li>
+                                    <li><a href="{{route('frontend.benciaries')}}">الفئات المستفيدة</a></li>
                                 </ul>
                                 <ul>
-                                    <li><a href="#">الرئيسية </a></li>
-                                    <li><a href="#">تطوع معنا</a></li>
-                                    <li><a href="#">عن الجمعية</a></li>
-                                    <li><a href="#">الرؤية و الرسالة</a></li>
-                                    <li><a href="#">مشروعتنا</a></li>
-                                    <li><a href="#">الفئات المستفيدة</a></li>
+                                    <li><a href="{{route('frontend.values')}}">قيمنا </a></li>
+                                    <li><a href="{{route('frontend.contact')}}">تواصل معنا </a></li>
+                                    <li><a href="{{route('frontend.membership')}}">العضويات </a></li>
+                                    <li><a href="{{route('frontend.news')}}">أخبارنا</a></li>
+                                    <li><a href="{{route('frontend.ben-trip')}}">رحلة المستفيد </a></li>
                                 </ul>
                             </div>
                         </div>
