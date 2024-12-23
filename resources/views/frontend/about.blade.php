@@ -22,7 +22,7 @@
                         <div class="details">
 
                             <p class="just">
-                                {!! $setting->descrption !!}
+                                {!! $setting->description !!}
 
                             </p>
                         </div>
