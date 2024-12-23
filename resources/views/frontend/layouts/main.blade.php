@@ -30,7 +30,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js')}}"></script>
     <![endif]-->
     <style>
-        .invalid-feedback{
+        .invalid-feedback {
             color: #dc3545 !important;
         }
     </style>
@@ -53,9 +53,10 @@
         <!-- end preloader -->
         <!-- Start header -->
         <header id="header" class="site-header">
-
-            <a class="navbar-brand" href="{{ route('frontend.home') }}"><img
-                    src="{{ asset('frontend/assets/images/logo_green.png') }}" alt></a>
+            @if ($setting->logo)
+                <a class="navbar-brand" href="{{ route('frontend.home') }}"><img src="{{ $setting->logo->getUrl() }}"
+                        alt></a>
+            @endif
 
 
             <div class="left-top-bar">
@@ -101,11 +102,11 @@
                                 <a href="#">الحوكمة</a>
                                 <ul class="sub-menu">
                                     @foreach ($hawkma_categories as $category)
-                                    <li>
-                                        <a href="{{ route('frontend.hawkma', $category) }}"><span>
-                                                {{ $category->name }}</span></a>
-                                    </li>
-                                @endforeach
+                                        <li>
+                                            <a href="{{ route('frontend.hawkma', $category) }}"><span>
+                                                    {{ $category->name }}</span></a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
@@ -170,18 +171,18 @@
                             <div class="widget link-widget">
 
                                 <ul>
-                                    <li><a href="{{route('frontend.home')}}">الرئيسية </a></li>
-                                    <li><a href="{{route('frontend.about')}}">عن الجمعية</a></li>
-                                    <li><a href="{{route('frontend.vision')}}">الرؤية و الرسالة</a></li>
-                                    <li><a href="{{route('frontend.projects')}}">مشروعتنا</a></li>
-                                    <li><a href="{{route('frontend.benciaries')}}">الفئات المستفيدة</a></li>
+                                    <li><a href="{{ route('frontend.home') }}">الرئيسية </a></li>
+                                    <li><a href="{{ route('frontend.about') }}">عن الجمعية</a></li>
+                                    <li><a href="{{ route('frontend.vision') }}">الرؤية و الرسالة</a></li>
+                                    <li><a href="{{ route('frontend.projects') }}">مشروعتنا</a></li>
+                                    <li><a href="{{ route('frontend.benciaries') }}">الفئات المستفيدة</a></li>
                                 </ul>
                                 <ul>
-                                    <li><a href="{{route('frontend.values')}}">قيمنا </a></li>
-                                    <li><a href="{{route('frontend.contact')}}">تواصل معنا </a></li>
-                                    <li><a href="{{route('frontend.membership')}}">العضويات </a></li>
-                                    <li><a href="{{route('frontend.news')}}">أخبارنا</a></li>
-                                    <li><a href="{{route('frontend.ben-trip')}}">رحلة المستفيد </a></li>
+                                    <li><a href="{{ route('frontend.values') }}">قيمنا </a></li>
+                                    <li><a href="{{ route('frontend.contact') }}">تواصل معنا </a></li>
+                                    <li><a href="{{ route('frontend.membership') }}">العضويات </a></li>
+                                    <li><a href="{{ route('frontend.news') }}">أخبارنا</a></li>
+                                    <li><a href="{{ route('frontend.ben-trip') }}">رحلة المستفيد </a></li>
                                 </ul>
                             </div>
                         </div>
