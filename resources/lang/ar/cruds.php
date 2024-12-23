@@ -558,7 +558,7 @@ return [
             'pinterest' => 'رابط بنترست',
             'pinterest_helper' => ' ',
             'logo_white' => 'الشعار بخلفية بيضاء',
-            'logo_white_helper' => ' ',
+            'logo_white_helper' =>  '( مقاس الصورة  المناسب العرض :304px  - الطول :164px)',
             'values' => 'قيمنا  ',
             'values_helper' => ' ',
             'mission' => 'الرسالة',

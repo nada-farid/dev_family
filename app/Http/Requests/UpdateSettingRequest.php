@@ -124,6 +124,12 @@ class UpdateSettingRequest extends FormRequest
             'about_photo' =>[
                 'required'
             ],
+            'logo' =>[
+                'required'
+            ],
+            'logo_white' =>[
+                'required'
+            ],
         ];
     }
 
@@ -133,6 +139,7 @@ class UpdateSettingRequest extends FormRequest
             'inner_image.required' => __('global.Please upload inner image with required dimensions'),
             'about_photo.required' => __('global.Please upload about image with required dimensions'),
             'logo.required' => __('global.Please upload logo with required dimensions'),
+            'logo_white.required' => __('global.Please upload whit logo with required dimensions'),
 
         ];
     }
