@@ -19,7 +19,7 @@
                                     {{ $stackholder->title }}
                                 </h3>
                                 <br />
-                                <P>{!! $stackholder->description !!}</P>
+                                <P> {!! Str::limit($stackholder->description, 120) !!}</P>
                             </div>
                         @endforeach
                     </div>

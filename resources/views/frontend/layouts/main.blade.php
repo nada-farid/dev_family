@@ -24,6 +24,7 @@
     <link href="{{ asset('frontend/assets/css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
+
     <!-- HTML5 shim and Respond.js')}} for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js')}}"></script>
@@ -158,10 +159,36 @@
                                 <p class="just">{!! $setting->about_description !!}</p>
                                 <div class="social-icons">
                                     <ul>
-                                        <li><a href="{{ $setting->facebook }}"><i class="ti-facebook"></i></a></li>
-                                        <li><a href="{{ $setting->twitter }}"><i class="ti-twitter-alt"></i></a></li>
-                                        <li><a href="{{ $setting->linkedin }}"><i class="ti-linkedin"></i></a></li>
-                                        <li><a href="{{ $setting->pinterest }}"><i class="ti-pinterest"></i></a></li>
+                                        @if ($setting->facebook)
+                                            <li><a href="{{ $setting->facebook }}"><i class="ti-facebook"></i></a>
+                                            </li>
+                                        @endif
+
+                                        @if ($setting->instagram)
+                                            <li><a href="{{ $setting->instagram }}"><i class="ti-instagram"></i></a>
+                                            </li>
+                                        @endif
+
+                                        @if ($setting->twitter)
+                                            <li><a href="{{ $setting->twitter }}"><i class="ti-twitter-alt"></i></a>
+                                            </li>
+                                        @endif
+
+                                        @if ($setting->linkedin)
+                                            <li><a href="{{ $setting->linkedin }}"><i class="ti-linkedin"></i></a>
+                                            </li>
+                                        @endif
+
+                                        @if ($setting->pinterest)
+                                            <li><a href="{{ $setting->pinterest }}"><i class="ti-pinterest"></i></a>
+                                            </li>
+                                        @endif
+
+                                        @if ($setting->youtubte)
+                                            <li><a href="{{ $setting->youtubte }}"><i class="ti-youtube"></i></a>
+                                            </li>
+                                        @endif
+
                                     </ul>
                                 </div>
                             </div>

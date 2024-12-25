@@ -55,7 +55,7 @@
                                 @endif
                             </div>
                             <div class="col-md-6">
-                                <input class=" {{ $errors->has('identity_number') ? 'is-invalid' : '' }}"   placeholder="رقم الهوية" type="text" name="identity_number" id="identity_number" value="{{ old('civial_registry', '') }}" required>
+                                <input class=" {{ $errors->has('identity_number') ? 'is-invalid' : '' }}"   placeholder="رقم الهوية" type="text" name="identity_number" id="identity_number" value="{{ old('identity_number', '') }}" required>
                                 @if($errors->has('identity_number'))
                                     <div class="invalid-feedback">
                                         {{ $errors->first('identity_number') }}

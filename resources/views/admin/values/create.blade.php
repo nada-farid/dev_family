@@ -75,9 +75,8 @@
       'X-CSRF-TOKEN': "{{ csrf_token() }}"
     },
     params: {
-      size: 2,
-      width: 4096,
-      height: 4096
+      size: 40,
+     
     },
     success: function (file, response) {
       $('form').find('input[name="icon"]').remove()

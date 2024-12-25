@@ -131,8 +131,7 @@
     },
     params: {
       size: 20,
-      width: 4096,
-      height: 4096
+     
     },
     success: function (file, response) {
       $('form').find('input[name="background_image"]').remove()

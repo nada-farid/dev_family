@@ -454,8 +454,7 @@
     },
     params: {
       size: 4,
-      width: 4096,
-      height: 4096
+     
     },
     success: function (file, response) {
       $('form').find('input[name="about_photo"]').remove()
@@ -509,8 +508,7 @@
     },
     params: {
       size: 40,
-      width: 4096,
-      height: 4096
+     
     },
     success: function (file, response) {
       $('form').find('input[name="inner_image"]').remove()
@@ -564,8 +562,7 @@
     },
     params: {
       size: 40,
-      width: 4096,
-      height: 4096
+     
     },
     success: function (file, response) {
       $('form').find('input[name="logo"]').remove()
@@ -619,8 +616,7 @@
     },
     params: {
       size: 2,
-      width: 4096,
-      height: 4096
+     
     },
     success: function (file, response) {
       $('form').find('input[name="logo_white"]').remove()
@@ -674,8 +670,7 @@
     },
     params: {
       size: 40,
-      width: 4096,
-      height: 4096
+     
     },
     success: function (file, response) {
       $('form').find('input[name="chairman_image"]').remove()

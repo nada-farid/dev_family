@@ -117,8 +117,7 @@
     },
     params: {
       size: 2,
-      width: 4096,
-      height: 4096
+     
     },
     success: function (file, response) {
       $('form').find('input[name="icon"]').remove()

@@ -33,16 +33,16 @@ class StoreMemberRequest extends FormRequest
                 'nullable',
             ],
             'phone_number' => [
-                'string',
                 'required',
+                'regex:/^05\d{8}$/',
             ],
             'email' => [
                 'string',
                 'required',
+                'email'
             ],
             'identity_number' => [
-                'string',
-                'max:10',
+                'regex:/^\d{10}$/',     
                 'required',
             ],
             'identity_date' => [
@@ -68,8 +68,7 @@ class StoreMemberRequest extends FormRequest
     {
         return [
             'phone_number.regex' => 'رقم الجوال يجب ان يكون 10 أرقام ويبدأ ب 05',
-            'identity_number.max'=>'رقم الهوية يجب ان يكون 10 أرقام',
-            'identity_number.integer'=>'رقم الهوية يجب ان يكون  أرقام',
+            'identity_number.regex'=>'رقم الهوية يجب ان يكون   10أرقام',
             'identity_number.required'=>'رقم الهوية مطلوب ',
             'type_id.required'=>'نوع العضوية مطلوب',
         ];

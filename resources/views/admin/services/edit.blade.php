@@ -10,7 +10,7 @@
         <form method="POST" action="{{ route("admin.services.update", [$service->id]) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="name">{{ trans('cruds.service.fields.name') }}</label>
                 <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name" id="name" value="{{ old('name', $service->name) }}">
                 @if($errors->has('name'))
@@ -19,7 +19,7 @@
                     </div>
                 @endif
                 <span class="help-block">{{ trans('cruds.service.fields.name_helper') }}</span>
-            </div>
+            </div> --}}
             <div class="form-group">
                 <label for="description">{{ trans('cruds.service.fields.description') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{!! old('description', $service->description) !!}</textarea>

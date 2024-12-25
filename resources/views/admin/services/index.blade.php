@@ -25,9 +25,9 @@
                         <th>
                             {{ trans('cruds.service.fields.id') }}
                         </th>
-                        <th>
+                        {{-- <th>
                             {{ trans('cruds.service.fields.name') }}
-                        </th>
+                        </th> --}}
                         <th>
                             &nbsp;
                         </th>
@@ -42,9 +42,9 @@
                             <td>
                                 {{ $service->id ?? '' }}
                             </td>
-                            <td>
+                            {{-- <td>
                                 {{ $service->name ?? '' }}
-                            </td>
+                            </td> --}}
                             <td>
                                 @can('service_show')
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.services.show', $service->id) }}">

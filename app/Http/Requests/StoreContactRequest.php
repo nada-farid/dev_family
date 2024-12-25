@@ -27,15 +27,23 @@ class StoreContactRequest extends FormRequest
             'email' => [
                 'string',
                 'required',
+                'email'
             ],
             'phone_number' => [
-                'string',
-                'nullable',
+                'required',
+                'regex:/^05\d{8}$/',
             ],
             'message' => [
                 'string',
                 'required',
             ],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'phone_number.regex' => 'رقم الجوال يجب ان يكون 10 أرقام ويبدأ ب 05',
         ];
     }
 }

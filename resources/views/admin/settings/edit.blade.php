@@ -675,8 +675,7 @@
     },
     params: {
       size: 40,
-      width: 4096,
-      height: 4096
+     
     },
     success: function (file, response) {
       $('form').find('input[name="chairman_image"]').remove()

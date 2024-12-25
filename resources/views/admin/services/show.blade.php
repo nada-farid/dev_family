@@ -23,14 +23,14 @@
                             {{ $service->id }}
                         </td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <th>
                             {{ trans('cruds.service.fields.name') }}
                         </th>
                         <td>
                             {{ $service->name }}
                         </td>
-                    </tr>
+                    </tr> --}}
                     <tr>
                         <th>
                             {{ trans('cruds.service.fields.description') }}
