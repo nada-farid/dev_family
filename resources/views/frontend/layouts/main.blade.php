@@ -34,6 +34,56 @@
         .invalid-feedback {
             color: #dc3545 !important;
         }
+
+        .side-btn {
+            position: fixed;
+            left: 100%;
+            top: 25%;
+            background-color: #75cac0;
+            text-align: center;
+            padding: 5px;
+            transform-origin: 0% 0%;
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            transform: rotate(90deg) translateX(-50%);
+            z-index: 999;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            width: 150px;
+
+        }
+
+        .side-btn a {
+            color: #fff;
+        }
+
+
+        .side-btn2 {
+            position: fixed;
+            left: 100%;
+            top: 45%;
+            background-color: #033d33;
+            text-align: center;
+            padding: 5px;
+            transform-origin: 0% 0%;
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            transform: rotate(90deg) translateX(-50%);
+            z-index: 999;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            width: 120px;
+        }
+
+        .side-btn2 a {
+            color: #fff;
+        }
     </style>
 
     @yield('styles')
@@ -41,8 +91,19 @@
 
 <body>
 
+
     <!-- start page-wrapper -->
     <section class="page-wrapper">
+        <div class="side-btn">
+            <a href="https://charities-sys.com/charity/login.aspx?Ref=d5hj25kugp7jlg2yy4bzp6maqs6nt8784ve31q29">
+                دخول المستفيدين
+            </a>
+        </div>
+        <div class="side-btn2 ">
+            <a href="https://charities-sys.com/charity/Login.aspx">
+                دخول الإدارة
+            </a>
+        </div>
 
         <!-- start preloader -->
         <div class="preloader">
@@ -279,6 +340,7 @@
                 locale: "ar" // لدعم اللغة العربية
             });
         </script>
+        <script src="https://kit.fontawesome.com/02c22aec7b.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
