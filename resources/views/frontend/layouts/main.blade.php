@@ -35,54 +35,79 @@
             color: #dc3545 !important;
         }
 
-        .side-btn {
+            .hidden-layer {
             position: fixed;
-            left: 100%;
-            top: 25%;
+            top: 100px;
+            right: -300px;
+            /* Hidden by default */
+            width: 300px;
+            height: 150px;
+            background-color: #f4f4f4;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            z-index: 999;
+        }
+
+        .hidden-layer.active {
+            right: 0;
+        }
+
+        .toggle-button {
+            position: fixed;
+            top: 150px;
+            right: 0;
+            /* Default position when layer is closed */
+            padding: 10px 20px;
             background-color: #75cac0;
-            text-align: center;
-            padding: 5px;
-            transform-origin: 0% 0%;
-            -webkit-transform: rotate(90deg);
-            -moz-transform: rotate(90deg);
-            -o-transform: rotate(90deg);
-            -ms-transform: rotate(90deg);
-            transform: rotate(90deg) translateX(-50%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: right 0.3s ease-in-out, transform 0.3s ease-in-out;
             z-index: 999;
+            transform: rotate(-90deg);
+            /* Rotate the button vertically */
+            right: -40px;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            width: 150px;
-
+            border-bottom-right-radius: 0px;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
         }
 
-        .side-btn a {
-            color: #fff;
-        }
-
-
-        .side-btn2 {
-            position: fixed;
-            left: 100%;
-            top: 45%;
+        .toggle-button:hover {
             background-color: #033d33;
-            text-align: center;
-            padding: 5px;
-            transform-origin: 0% 0%;
-            -webkit-transform: rotate(90deg);
-            -moz-transform: rotate(90deg);
-            -o-transform: rotate(90deg);
-            -ms-transform: rotate(90deg);
-            transform: rotate(90deg) translateX(-50%);
-            z-index: 999;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            width: 120px;
         }
 
-        .side-btn2 a {
+        .hidden-layer.active+.toggle-button {
+            right: 320px;
+            /* Move the button when the layer is open */
+
+        }
+
+        .hidden-layer li {
+            list-style: none;
+            font-size: 16px;
+            line-height: 40px;
+            border-bottom: dotted thin #c6c6c6;
+            transition-timing-function: ease-in-out;
+            padding-right: 20px;
+        }
+
+        .hidden-layer li:hover a {
             color: #fff;
+
+        }
+
+        .hidden-layer li:last-child {
+            border-bottom: none;
+        }
+
+        .hidden-layer li:hover {
+            background: #033d33;
+            color: #fff;
+
         }
     </style>
 
@@ -129,11 +154,11 @@
                                 aria-hidden="true"></i></a>
                     </button>
                     <button type="button" class="btn btn-primary" style="background-color: #033d33; !important">
-                     
-                    <a style="color:white" href="https://charities-sys.com/index.aspx?Ref=d5hj25kugp7jlg2yy4bzp6maqs6nt8784ve31q29">
-                        دخول المستفيدين <i class="fa fa-arrow-left"
-                                aria-hidden="true"></i>
-                    </a>
+
+                        <a style="color:white"
+                            href="https://charities-sys.com/index.aspx?Ref=d5hj25kugp7jlg2yy4bzp6maqs6nt8784ve31q29">
+                            دخول المستفيدين <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                        </a>
                     </button>
                     {{-- <button type="button" class="btn btn-secondry">تطوع معنا</button> --}}
                 </div>
@@ -216,6 +241,14 @@
             </div>
         </header>
         @yield('content')
+
+        <button class="toggle-button" id="toggleButton" onclick="toggleLayer()">دخول الإدارة</button>
+
+        <div class="hidden-layer" id="hiddenLayer">
+            <li> <a href="https://charities-sys.com/charity/Login.aspx"> ادارة المستفدين</a></li>
+            <li> <a href="#"> ادارة الجمعية </a></li>
+            <li> <a href="{{route('admin.home')}}"> ادارة الموقع</a></li>
+        </div>
 
         <footer class="site-footer">
             <div class="upper-footer">
@@ -348,6 +381,17 @@
             });
         </script>
         <script src="https://kit.fontawesome.com/02c22aec7b.js" crossorigin="anonymous"></script>
+        <script>
+            function toggleLayer() {
+                const layer = document.getElementById('hiddenLayer');
+                const button = document.getElementById('toggleButton');
+                layer.classList.toggle('active');
+                button.textContent = layer.classList.contains('active') ? 'إغلاق التسجيل' : 'دخول الإدارة';
+      
+                // Move button when layer opens or closes
+                button.style.right = layer.classList.contains('active') ? '260px' : '-40px';
+            }
+        </script>
 </body>
 
 </html>
