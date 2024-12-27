@@ -30,4 +30,12 @@ class StoreValueRequest extends FormRequest
             ],
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'icon.required' => __('global.Please upload an image with required dimensions'),
+        ];
+    }
+
 }
