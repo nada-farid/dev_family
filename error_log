@@ -1,0 +1,40 @@
+[23-Dec-2024 14:52:54 Asia/Singapore] PHP Warning:  require(/home/visionss/dev-family.visions-sa.com/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/dev-family.visions-sa.com/index.php on line 34
+[23-Dec-2024 14:52:54 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/dev-family.visions-sa.com/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/dev-family.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/dev-family.visions-sa.com/index.php on line 34
+[23-Dec-2024 14:54:08 Asia/Singapore] PHP Warning:  require(/home/visionss/dev-family.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/dev-family.visions-sa.com/index.php on line 34
+[23-Dec-2024 14:54:08 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/dev-family.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/dev-family.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/dev-family.visions-sa.com/index.php on line 34
+[23-Dec-2024 14:54:31 Asia/Singapore] PHP Warning:  require(/home/visionss/dev-family.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/dev-family.visions-sa.com/artisan on line 18
+[23-Dec-2024 14:54:31 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/dev-family.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/dev-family.visions-sa.com/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/dev-family.visions-sa.com/artisan on line 18
+[23-Dec-2024 15:03:14 Asia/Singapore] PHP Warning:  require(/home/visionss/dev-family.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/dev-family.visions-sa.com/artisan on line 18
+[23-Dec-2024 15:03:14 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/dev-family.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/dev-family.visions-sa.com/artisan:18
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/dev-family.visions-sa.com/artisan on line 18
+[23-Dec-2024 15:03:20 Asia/Singapore] PHP Warning:  require(/home/visionss/dev-family.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/dev-family.visions-sa.com/index.php on line 34
+[23-Dec-2024 15:03:20 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/dev-family.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/dev-family.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/dev-family.visions-sa.com/index.php on line 34
+[23-Dec-2024 15:03:23 Asia/Singapore] PHP Warning:  require(/home/visionss/dev-family.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/dev-family.visions-sa.com/index.php on line 34
+[23-Dec-2024 15:03:23 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/dev-family.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/dev-family.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/dev-family.visions-sa.com/index.php on line 34
+[23-Dec-2024 15:04:45 Asia/Singapore] PHP Warning:  require(/home/visionss/dev-family.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/dev-family.visions-sa.com/index.php on line 34
+[23-Dec-2024 15:04:45 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/dev-family.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/dev-family.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/dev-family.visions-sa.com/index.php on line 34
+[23-Dec-2024 15:04:47 Asia/Singapore] PHP Warning:  require(/home/visionss/dev-family.visions-sa.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/visionss/dev-family.visions-sa.com/index.php on line 34
+[23-Dec-2024 15:04:47 Asia/Singapore] PHP Fatal error:  Uncaught Error: Failed opening required '/home/visionss/dev-family.visions-sa.com/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/visionss/dev-family.visions-sa.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/visionss/dev-family.visions-sa.com/index.php on line 34

@@ -94,12 +94,12 @@
 
     <!-- start page-wrapper -->
     <section class="page-wrapper">
-        <div class="side-btn">
-            <a href="https://charities-sys.com/charity/login.aspx?Ref=d5hj25kugp7jlg2yy4bzp6maqs6nt8784ve31q29">
-                دخول المستفيدين
-            </a>
-        </div>
-        <div class="side-btn2 ">
+        <!--<div class="side-btn">-->
+        <!--    <a href="https://charities-sys.com/charity/login.aspx?Ref=d5hj25kugp7jlg2yy4bzp6maqs6nt8784ve31q29">-->
+        <!--        دخول المستفيدين-->
+        <!--    </a>-->
+        <!--</div>-->
+        <div class="side-btn ">
             <a href="https://charities-sys.com/charity/Login.aspx">
                 دخول الإدارة
             </a>
@@ -128,10 +128,11 @@
                         <a style="color:white" href="{{ $setting->donation_url }}">تبرع الان <i class="fa fa-heart"
                                 aria-hidden="true"></i></a>
                     </button>
-                    <button type="button" class="btn btn-secondry">
+                    <button type="button" class="btn btn-primary" style="background-color: #033d33; !important">
                      
-                    <a style="color:white" href="https://charities-sys.com/charity/login.aspx?Ref=d5hj25kugp7jlg2yy4bzp6maqs6nt8784ve31q29">
-                        دخول المستفيدين
+                    <a style="color:white" href="https://charities-sys.com/index.aspx?Ref=d5hj25kugp7jlg2yy4bzp6maqs6nt8784ve31q29">
+                        دخول المستفيدين <i class="fa fa-arrow-left"
+                                aria-hidden="true"></i>
                     </a>
                     </button>
                     {{-- <button type="button" class="btn btn-secondry">تطوع معنا</button> --}}
