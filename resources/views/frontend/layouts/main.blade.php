@@ -119,17 +119,6 @@
 
     <!-- start page-wrapper -->
     <section class="page-wrapper">
-        <!--<div class="side-btn">-->
-        <!--    <a href="https://charities-sys.com/charity/login.aspx?Ref=d5hj25kugp7jlg2yy4bzp6maqs6nt8784ve31q29">-->
-        <!--        دخول المستفيدين-->
-        <!--    </a>-->
-        <!--</div>-->
-        <div class="side-btn ">
-            <a href="https://charities-sys.com/charity/Login.aspx">
-                دخول الإدارة
-            </a>
-        </div>
-
         <!-- start preloader -->
         <div class="preloader">
             <div class="preloader-inner">

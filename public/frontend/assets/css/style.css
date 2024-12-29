@@ -5620,6 +5620,15 @@ img {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+    transition: all 0.2s ease;
+}
+
+.mission-vision-section:hover .grid p {
+    overflow: visible;
+    white-space: normal;
+    height: auto; /* just added this line */
+    -webkit-line-clamp:none;
+   
 }
 
     .mission-vision-section .overlay {
@@ -9348,23 +9357,42 @@ img {
                 height: 100px;
                 margin-right: 10px;
             }
+                .whyus_here .item .icon img {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                .item .details {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    transition: all 0.2s ease;
+                }
 
 
 
-    /*--------------------------------------------------------------
+                    .item .details:hover {
+                        overflow: visible;
+                        white-space: normal;
+                        height: auto; /* just added this line */
+                        -webkit-line-clamp: none;
+                    }
+
+            /*--------------------------------------------------------------
 	### values
 --------------------------------------------------------------*/
-
-    .value {
-        display: flex;
-        justify-content: space-between;
-        gap: 40px;
-        background: #f9f9f9;
-        padding: 20px;
-        border-radius: 50px;
-        margin-bottom: 10px;
-        align-items: center;
-    }
+            .value {
+                display: flex;
+                justify-content: space-between;
+                gap: 40px;
+                background: #f9f9f9;
+                padding: 20px;
+                border-radius: 50px;
+                margin-bottom: 10px;
+                align-items: center;
+            }
 
     .value-icon {
         width: 10%;
@@ -9388,8 +9416,21 @@ img {
         font-size: 20px;
     }
 
-    .value-desc {
-    }
+
+        .value-desc p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            transition: all 0.2s ease;
+        }
+        .value-desc:hover p {
+            overflow: visible;
+            white-space: normal;
+            height: auto; /* just added this line */
+            -webkit-line-clamp: none;
+        }
 
     .concerned {
         width: 30%;
@@ -9434,7 +9475,7 @@ img {
 
 
     /* TIMELINE
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 
     .timeline ul {
         padding: 50px 0;
@@ -9511,7 +9552,7 @@ img {
 
 
     /* EFFECTS
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 
     .timeline ul li::after {
         transition: background 0.5s ease-in-out;
@@ -9543,7 +9584,7 @@ img {
 
 
     /* GENERAL MEDIA QUERIES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 
     @media screen and (max-width: 900px) {
         .timeline ul li div {
@@ -9578,7 +9619,7 @@ img {
 
 
     /* EXTRA/CLIP PATH STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
     .timeline-clippy ul li::after {
         width: 40px;
         height: 40px;
@@ -9618,3 +9659,59 @@ img {
             transform: translateX(-50%) scale(1);
         }
     }
+
+
+.side-btn {
+    position: fixed;
+    left: 100%;
+    top: 25%;
+    background-color: #75cac0;
+     text-align:center;
+    padding:5px;
+    transform-origin: 0% 0%;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg) translateX(-50%);
+    z-index: 999;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width:150px;
+   
+}
+    .side-btn a {
+        color: #fff;
+    }
+
+
+.side-btn2 {
+    position: fixed;
+    left: 100%;
+    top: 45%;
+    background-color: #033d33;
+    text-align: center;
+    padding: 5px;
+    transform-origin: 0% 0%;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg) translateX(-50%);
+    z-index: 999;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 120px;
+}
+
+    .side-btn2 a {
+        color: #fff;
+    }
+
+
+.whyus_here .item .icon img {
+    max-width:100px;
+    height:100px;
+}
