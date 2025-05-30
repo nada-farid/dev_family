@@ -26,9 +26,6 @@
                             {{ trans('cruds.volunteerGuide.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.volunteerGuide.fields.published') }}
-                        </th>
-                        <th>
                             {{ trans('cruds.volunteerGuide.fields.file') }}
                         </th>
                         <th>
@@ -47,10 +44,6 @@
                             </td>
                             <td>
                                 {{ $volunteerGuide->id ?? '' }}
-                            </td>
-                            <td>
-                                <span style="display:none">{{ $volunteerGuide->published ?? '' }}</span>
-                                <input type="checkbox" disabled="disabled" {{ $volunteerGuide->published ? 'checked' : '' }}>
                             </td>
                             <td>
                                 @if($volunteerGuide->file)

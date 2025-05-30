@@ -286,7 +286,7 @@
                 </ul>
             </li>
         @endcan
-        {{-- @can('volunteering_managment_access')
+        @can('volunteering_managment_access')
             <li class="c-sidebar-nav-dropdown {{ request()->is("admin/volunteers*") ? "c-show" : "" }} {{ request()->is("admin/volunteer-guides*") ? "c-show" : "" }}">
                 <a class="c-sidebar-nav-dropdown-toggle" href="#">
                     <i class="fa-fw fas fa-hands-helping c-sidebar-nav-icon">
@@ -317,7 +317,7 @@
                     @endcan
                 </ul>
             </li>
-        @endcan --}}
+        @endcan
         @can('support_access')
             <li class="c-sidebar-nav-item">
                 <a href="{{ route("admin.supports.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/supports") || request()->is("admin/supports/*") ? "c-active" : "" }}">

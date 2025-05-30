@@ -17,9 +17,12 @@ Route::group(['as' => 'frontend.'], function () {
     Route::get('/project/{project}', 'ProjectController@project')->name('project');
     Route::get('/membership', 'MemberShipController@membership')->name('membership');
     Route::post('/membership/store', 'MemberShipController@store')->name('membership.store');
-    Route::get('contact-us','ContactUsController@contact')->name('contact');
-    Route::post('contact-us/store','ContactUsController@store')->name('contact.store');
+    Route::get('contact-us', 'ContactUsController@contact')->name('contact');
+    Route::post('contact-us/store', 'ContactUsController@store')->name('contact.store');
     Route::get('hawkma/{category}', 'HomeController@hawkma')->name('hawkma');
     Route::get('reports/{type}', 'HomeController@reports')->name('reports');
+    Route::get('volunteer', 'VolunteerController@show')->name('volunteer');
+    Route::get('volunteer-guide', 'VolunteerController@volunteerGuide')->name('guides');
+    Route::post('volunteer/store', 'VolunteerController@store')->name('volunteer.store');
 
 });

@@ -25,14 +25,6 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.volunteerGuide.fields.published') }}
-                        </th>
-                        <td>
-                            <input type="checkbox" disabled="disabled" {{ $volunteerGuide->published ? 'checked' : '' }}>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.volunteerGuide.fields.file') }}
                         </th>
                         <td>

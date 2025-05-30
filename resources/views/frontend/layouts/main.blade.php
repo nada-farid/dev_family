@@ -192,6 +192,14 @@
                                     @endforeach
                                 </ul>
                             </li>
+                                     </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">وحدة التطوع</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{{route('frontend.guides')}}"><span>أدلة التطوع</span></a></li>
+                                    <li><a href="{{route('frontend.volunteer')}}"><span>أنضم كمتطوع</span></a></li>
+                                </ul>
+                            </li>
                             <li class="menu-item-has-children">
                                 <a href="#">المركز الاعلامي</a>
                                 <ul class="sub-menu">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreVolunteerRequest;
+use App\Models\Project;
 use App\Models\VolunteerGuide;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use App\Models\Volunteer;
@@ -14,7 +15,8 @@ class VolunteerController extends Controller
 {
     //
     public function show(){
-        return view('frontend.volunteer');
+        $projects = Project::all();
+        return view('frontend.volunteer',compact('projects'));
     }
     public function volunteerGuide(){
         $guides = VolunteerGuide::all();
