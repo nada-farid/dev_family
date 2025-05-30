@@ -38,6 +38,7 @@ class Report extends Model implements HasMedia
     ];
 
     public const TYPE_SELECT = [
+        'monthly'         => 'تقارير شهرية',
         'yearly'        => 'تقارير سنوية',
         'money'         => 'تقارير مالية',
         // 'questionnaire' => 'استبيانات',

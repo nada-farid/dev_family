@@ -19,8 +19,9 @@ class ReportCategory extends Model
     ];
 
     public const TYPE_SELECT = [
+        'monthly' => 'تقارير شهرية',
         'yearly' => 'تقارير سنوية',
-        'money'  => 'تقارير مالية',
+        'money' => 'تقارير مالية',
     ];
 
     protected $fillable = [
@@ -36,8 +37,9 @@ class ReportCategory extends Model
     {
         return $date->format('Y-m-d H:i:s');
     }
-    
-    public function reports(){
-        return $this->hasMany(Report::class,'category_id');
+
+    public function reports()
+    {
+        return $this->hasMany(Report::class, 'category_id');
     }
 }

@@ -35,7 +35,7 @@
             color: #dc3545 !important;
         }
 
-            .hidden-layer {
+        .hidden-layer {
             position: fixed;
             top: 100px;
             right: -300px;
@@ -192,12 +192,12 @@
                                     @endforeach
                                 </ul>
                             </li>
-                                     </li>
+                            </li>
                             <li class="menu-item-has-children">
                                 <a href="#">وحدة التطوع</a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{route('frontend.guides')}}"><span>أدلة التطوع</span></a></li>
-                                    <li><a href="{{route('frontend.volunteer')}}"><span>أنضم كمتطوع</span></a></li>
+                                    <li><a href="{{ route('frontend.guides') }}"><span>أدلة التطوع</span></a></li>
+                                    <li><a href="{{ route('frontend.volunteer') }}"><span>أنضم كمتطوع</span></a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
@@ -212,6 +212,10 @@
                             <li class="menu-item-has-children">
                                 <a href="#"> التقارير</a>
                                 <ul class="sub-menu">
+                                    <li>
+                                        <a href="{{ route('frontend.reports', 'monthly') }}"><span> تقارير شهرية
+                                            </span></a>
+                                    </li>
                                     <li>
                                         <a href="{{ route('frontend.reports', 'yearly') }}"><span> تقارير سنوية
                                             </span></a>
@@ -244,7 +248,7 @@
         <div class="hidden-layer" id="hiddenLayer">
             <li> <a href="https://charities-sys.com/charity/Login.aspx"> ادارة المستفدين</a></li>
             <li> <a href="#"> ادارة الجمعية </a></li>
-            <li> <a href="{{route('admin.home')}}"> ادارة الموقع</a></li>
+            <li> <a href="{{ route('admin.home') }}"> ادارة الموقع</a></li>
         </div>
 
         <footer class="site-footer">
@@ -384,7 +388,7 @@
                 const button = document.getElementById('toggleButton');
                 layer.classList.toggle('active');
                 button.textContent = layer.classList.contains('active') ? 'إغلاق التسجيل' : 'دخول الإدارة';
-      
+
                 // Move button when layer opens or closes
                 button.style.right = layer.classList.contains('active') ? '260px' : '-40px';
             }
