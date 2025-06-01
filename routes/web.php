@@ -1,4 +1,6 @@
 <?php
+Route::get('volunteer/qr/{id}', 'Frontend\HomeController@volunteer_qr')->name('volunteer_qr');
+
 Route::group(['as' => 'frontend.'], function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/about', 'HomeController@about')->name('about');
@@ -24,5 +26,6 @@ Route::group(['as' => 'frontend.'], function () {
     Route::get('volunteer', 'VolunteerController@show')->name('volunteer');
     Route::get('volunteer-guide', 'VolunteerController@volunteerGuide')->name('guides');
     Route::post('volunteer/store', 'VolunteerController@store')->name('volunteer.store');
+    Route::post('volunteers/media', 'VolunteerController@storeMedia')->name('volunteers.storeMedia');
 
 });

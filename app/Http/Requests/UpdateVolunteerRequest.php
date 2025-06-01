@@ -17,36 +17,33 @@ class UpdateVolunteerRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => [
-                'required',
-            ],
             'name' => [
                 'string',
                 'required',
             ],
-            'phone' => [
+            'identity_num' => [
                 'string',
                 'required',
             ],
-            'identity' => [
+            'email' => [
+                'required',
+                'unique:volunteers,email,' . request()->route('volunteer')->id,
+            ],
+            'phone_number' => [
                 'string',
                 'required',
             ],
-            'skills' => [
-                'required',
-            ],
-            'experience' => [
-                'required',
-            ],
-            'volunteer_befor' => [
-                'required',
+            'interest' => [
+                'string',
+                'nullable',
             ],
             'initiative_name' => [
                 'string',
-                'required',
+                'nullable',
             ],
-            'cv' => [
-                'required',
+            'prev_experience' => [
+                'string',
+                'nullable',
             ],
         ];
     }

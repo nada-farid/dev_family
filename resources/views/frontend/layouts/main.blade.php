@@ -23,6 +23,7 @@
     <link href="{{ asset('frontend/assets/css/jquery.fancybox.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/assets/css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="{{ asset('dashboard_offline/css/dropzone.min.css') }}">
 
 
     <!-- HTML5 shim and Respond.js')}} for IE8 support of HTML5 elements and media queries -->
@@ -198,6 +199,8 @@
                                 <ul class="sub-menu">
                                     <li><a href="{{ route('frontend.guides') }}"><span>أدلة التطوع</span></a></li>
                                     <li><a href="{{ route('frontend.volunteer') }}"><span>أنضم كمتطوع</span></a></li>
+                                    <li><a href="{{ route('volunteer.login_form') }}"><span>دخول المتطوعين</span></a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
@@ -373,7 +376,7 @@
         <!-- Custom script for this template -->
         <script src="{{ asset('frontend/assets/js/script.js') }}"></script>
         @include('sweetalert::alert')
-        @yield('scripts')
+
 
         <script>
             flatpickr(".date_picker", {
@@ -393,6 +396,8 @@
                 button.style.right = layer.classList.contains('active') ? '260px' : '-40px';
             }
         </script>
+        <script src="{{ asset('dashboard_offline/js/dropzone.min.js') }}"></script>
+        @yield('scripts')
 </body>
 
 </html>

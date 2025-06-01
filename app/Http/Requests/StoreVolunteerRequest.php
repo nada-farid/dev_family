@@ -17,33 +17,36 @@ class StoreVolunteerRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => [
-                'required',
-            ],
             'name' => [
                 'string',
                 'required',
             ],
-            'phone' => [
+            'identity_num' => [
                 'string',
                 'required',
             ],
-            'identity' => [
+            'email' => [
+                'required',
+                'unique:volunteers'
+            ],
+            'phone_number' => [
                 'string',
                 'required',
             ],
-            'skills' => [
-                'required',
-            ],
-            'experience' => [
-                'required',
+            'interest' => [
+                'string',
+                'nullable',
             ],
             'initiative_name' => [
                 'string',
-                'required',
+                'nullable',
             ],
-            'cv' => [
-                'required',
+            'prev_experience' => [
+                'string',
+                'nullable',
+            ],
+            'cv' => [ 
+                'nullable',
             ],
         ];
     }

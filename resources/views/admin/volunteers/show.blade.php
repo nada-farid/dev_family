@@ -25,14 +25,6 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.volunteer.fields.email') }}
-                        </th>
-                        <td>
-                            {{ $volunteer->email }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.volunteer.fields.name') }}
                         </th>
                         <td>
@@ -41,42 +33,34 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.volunteer.fields.phone') }}
+                            {{ trans('cruds.volunteer.fields.identity_num') }}
                         </th>
                         <td>
-                            {{ $volunteer->phone }}
+                            {{ $volunteer->identity_num }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.volunteer.fields.identity') }}
+                            {{ trans('cruds.volunteer.fields.email') }}
                         </th>
                         <td>
-                            {{ $volunteer->identity }}
+                            {{ $volunteer->email }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.volunteer.fields.skills') }}
+                            {{ trans('cruds.volunteer.fields.phone_number') }}
                         </th>
                         <td>
-                            {{ $volunteer->skills }}
+                            {{ $volunteer->phone_number }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.volunteer.fields.experience') }}
+                            {{ trans('cruds.volunteer.fields.interest') }}
                         </th>
                         <td>
-                            {{ $volunteer->experience }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.volunteer.fields.volunteer_befor') }}
-                        </th>
-                        <td>
-                            <input type="checkbox" disabled="disabled" {{ $volunteer->volunteer_befor ? 'checked' : '' }}>
+                            {{ $volunteer->interest }}
                         </td>
                     </tr>
                     <tr>
@@ -85,6 +69,14 @@
                         </th>
                         <td>
                             {{ $volunteer->initiative_name }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.volunteer.fields.prev_experience') }}
+                        </th>
+                        <td>
+                            {{ $volunteer->prev_experience }}
                         </td>
                     </tr>
                     <tr>
@@ -99,8 +91,25 @@
                             @endif
                         </td>
                     </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.volunteer.fields.photo') }}
+                        </th>
+                        <td>
+                            @if($volunteer->photo)
+                                <a href="{{ $volunteer->photo->getUrl() }}" target="_blank" style="display: inline-block">
+                                    <img src="{{ $volunteer->photo->getUrl('thumb') }}">
+                                </a>
+                            @endif
+                        </td>
+                    </tr>
                 </tbody>
             </table>
+            <div class="form-group">
+                <a class="btn btn-default" href="{{ route('admin.volunteers.index') }}">
+                    {{ trans('global.back_to_list') }}
+                </a>
+            </div>
         </div>
     </div>
 </div>

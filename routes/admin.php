@@ -9,6 +9,8 @@ Route::get('/home', function () {
     return redirect()->route('admin.home');
 });
 
+Route::get('api/search_beneficires','ApiController@searchBeneficires')->name('api.search_beneficires');
+
 Auth::routes(['register' => false]);
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
@@ -94,17 +96,24 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('galleries/ckmedia', 'GalleryController@storeCKEditorImages')->name('galleries.storeCKEditorImages');
     Route::resource('galleries', 'GalleryController');
 
-    // Volunteer
+    // Volunteers
     Route::delete('volunteers/destroy', 'VolunteerController@massDestroy')->name('volunteers.massDestroy');
     Route::post('volunteers/media', 'VolunteerController@storeMedia')->name('volunteers.storeMedia');
     Route::post('volunteers/ckmedia', 'VolunteerController@storeCKEditorImages')->name('volunteers.storeCKEditorImages');
+    Route::get('volunteers/verify/{id}', 'VolunteerController@verify')->name('volunteers.verify');
+    Route::post('volunteers/verify_submit', 'VolunteerController@verify_submit')->name('volunteers.verify_submit');
     Route::resource('volunteers', 'VolunteerController');
-
     // Volunteer Guides
     Route::delete('volunteer-guides/destroy', 'VolunteerGuidesController@massDestroy')->name('volunteer-guides.massDestroy');
     Route::post('volunteer-guides/media', 'VolunteerGuidesController@storeMedia')->name('volunteer-guides.storeMedia');
     Route::post('volunteer-guides/ckmedia', 'VolunteerGuidesController@storeCKEditorImages')->name('volunteer-guides.storeCKEditorImages');
     Route::resource('volunteer-guides', 'VolunteerGuidesController');
+
+    
+    // Volunteer Tasks
+    Route::delete('volunteer-tasks/destroy', 'VolunteerTasksController@massDestroy')->name('volunteer-tasks.massDestroy');
+    Route::get('volunteer-tasks/qr/{id}', 'VolunteerTasksController@qr')->name('volunteer-tasks.qr');
+    Route::resource('volunteer-tasks', 'VolunteerTasksController');
 
     // Members
     Route::delete('members/destroy', 'MembersController@massDestroy')->name('members.massDestroy');
@@ -172,6 +181,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Membership Type
     Route::delete('membership-types/destroy', 'MembershipTypeController@massDestroy')->name('membership-types.massDestroy');
     Route::resource('membership-types', 'MembershipTypeController');
+
+    
+    Route::get('global-search', 'GlobalSearchController@search')->name('globalSearch');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password

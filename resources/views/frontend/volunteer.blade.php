@@ -1,4 +1,5 @@
 @extends('frontend.layouts.main')
+
 @section('content')
     @include('frontend.partials.breadcrumb', [
         'heading' => 'التطوع',
@@ -9,130 +10,87 @@
     <section class="mmbership blog-single-section ">
         <div class="container">
             <div class="comment-respond">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="contact-form-wrap">
+                            @if ($errors->count() > 0)
+                                <div class="alert alert-danger">
+                                    <ul class="list-unstyled">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            <form action="{{ route('frontend.volunteer.store') }}" method="POST">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-grp">
 
-                <form class="row needs-validation" novalidate method="POST" action="{{ route('frontend.volunteer.store') }}"
-                    enctype="multipart/form-data">
-                    @csrf
+                                            <input type="text" placeholder="الاسم" required name="name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-grp">
 
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
-                                name="name" id="volunteerName" value="{{ old('name') }}" placeholder="الاسم"
-                                name="name" required />
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-group">
-                            <input type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
-                                name="email" id="volunteerEmail" placeholder="البريد الالكتروني" name="email" required
-                                value="{{ old('email') }}" />
-                            @if ($errors->has('email'))
-                                <div class="invalid-feedback">
-                                    {{ $errors->first('email') }}
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control  {{ $errors->has('identity') ? 'is-invalid' : '' }}"
-                                name="identity" id="volunteerNum" value="{{ old('identity') }}" placeholder="رقم الهوية"
-                                required />
-                            @if ($errors->has('identity'))
-                                <div class="invalid-feedback">
-                                    {{ $errors->first('identity') }}
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control {{ $errors->has('phone') ? 'is-invalid' : '' }}"
-                                name="phone" value="{{ old('phone') }}" id="phone" placeholder="الهاتف" required />
-                            @if ($errors->has('phone'))
-                                <div class="invalid-feedback">
-                                    {{ $errors->first('phone') }}
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control {{ $errors->has('skills') ? 'is-invalid' : '' }}"
-                                name="skills" value="{{ old('skills') }}" id="volunteerInter"
-                                placeholder="الاهتمامات والطلبات" required />
-                            @if ($errors->has('skills'))
-                                <div class="invalid-feedback">
-                                    {{ $errors->first('skills') }}
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-group">
-                            <select name="initiative_name" id="initiative_name">
-                                @foreach ($projects as $project)
-                                    <option value="{{ $project->title }}"
-                                        {{ old('initiative_name') == $project->title ? 'selected' : '' }}>
-                                        {{ $project->title }}</option>
-                                @endforeach
-                            </select>
-                            @if ($errors->has('initiative_name'))
-                                <div class="invalid-feedback">
-                                    {{ $errors->first('initiative_name') }}
-                                </div>
-                            @endif
-                        </div>
-                    </div>
+                                            <input type="email" placeholder="البريد الالكتروني" required name="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-grp">
 
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-group">
-                            <input type="file" class="form-control  {{ $errors->has('cv') ? 'is-invalid' : '' }}"
-                                name="cv" id="volunteerCV" placeholder=" رفع السيرة الذاتية " accept="files/*"
-                                multiple="false" required="" />
+                                            <input type="text" placeholder="رقم الهوية" required name="identity_num">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-grp">
 
-                            @if ($errors->has('cv'))
-                                <div class="invalid-feedback">
-                                    {{ $errors->first('cv') }}
+                                            <input type="text" placeholder="الهاتف" required name="phone_number">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-grp">
+
+                                            <input type="text" placeholder="الاهتمامات والطلبات" required
+                                                name="interest">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-grp">
+
+                                            <input type="text" placeholder=" اسم المبادرة" required
+                                                name="initiative_name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-grp">
+
+                                            <input type="text" placeholder=" تجربتك التطوعية السابقة في دعم" required
+                                                name="prev_experience">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="cv">السيرة الذاتية</label>
+                                            <div class="needsclick dropzone {{ $errors->has('cv') ? 'is-invalid' : '' }}"
+                                                id="cv-dropzone">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {{-- @include('partials.recaptcha') --}}
+                                    <div class="submit-btn text-center mt-4">
+                                        <button type="submit" class="btn">أرسال</button>
+                                    </div>
                                 </div>
-                            @endif
+                            </form>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-group">
-                            <input type="text" name="experience" value="{{ old('experience') }}"
-                                class="form-control  {{ $errors->has('experience') ? 'is-invalid' : '' }}" id="experience"
-                                placeholder="خبراتك السابقة " required />
-                            @if ($errors->has('experience'))
-                                <div class="invalid-feedback">
-                                    {{ $errors->first('experience') }}
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-group">
-                            <div class="form-check {{ $errors->has('volunteer_befor') ? 'is-invalid' : '' }}">
-                                <label class="required form-check-label" for="volunteer_befor"
-                                    style="color:#ccc;font-weight:100">{{ trans('cruds.volunteer.fields.volunteer_befor') }}</label>
-                                <input class="form-check-input" type="checkbox" name="volunteer_befor" id="volunteer_befor"
-                                    value="1" required {{ old('volunteer_befor', 0) == 1 ? 'checked' : '' }}
-                                    style="width:5%">
-
-                            </div>
-                            @if ($errors->has('volunteer_befor'))
-                                <div class="invalid-feedback">
-                                    {{ $errors->first('volunteer_befor') }}
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="form-submit ol-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <input id="submit" value="طلب تطوع" type="submit">
-                    </div>
-                </form>
             </div>
         </div>
     </section>
@@ -142,13 +100,53 @@
 @endsection
 @section('scripts')
     <script>
-        const fileInput = document.getElementById('volunteerCV');
-        const fileNameDisplay = document.getElementById('fileName');
+        Dropzone.options.cvDropzone = {
+            url: '{{ route('frontend.volunteers.storeMedia') }}',
+            maxFilesize: 2, // MB
+            maxFiles: 1,
+            addRemoveLinks: true,
+            headers: {
+                'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            },
+            params: {
+                size: 2
+            },
+            success: function(file, response) {
+                $('form').find('input[name="cv"]').remove()
+                $('form').append('<input type="hidden" name="cv" value="' + response.name + '">')
+            },
+            removedfile: function(file) {
+                file.previewElement.remove()
+                if (file.status !== 'error') {
+                    $('form').find('input[name="cv"]').remove()
+                    this.options.maxFiles = this.options.maxFiles + 1
+                }
+            },
+            init: function() {
+                @if (isset($volunteer) && $volunteer->cv)
+                    var file = {!! json_encode($volunteer->cv) !!}
+                    this.options.addedfile.call(this, file)
+                    file.previewElement.classList.add('dz-complete')
+                    $('form').append('<input type="hidden" name="cv" value="' + file.file_name + '">')
+                    this.options.maxFiles = this.options.maxFiles - 1
+                @endif
+            },
+            error: function(file, response) {
+                if ($.type(response) === 'string') {
+                    var message = response //dropzone sends it's own error messages in string
+                } else {
+                    var message = response.errors.file
+                }
+                file.previewElement.classList.add('dz-error')
+                _ref = file.previewElement.querySelectorAll('[data-dz-errormessage]')
+                _results = []
+                for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                    node = _ref[_i]
+                    _results.push(node.textContent = message)
+                }
 
-        fileInput.addEventListener('change', function() {
-            if (fileInput.files.length > 0) {
-                fileNameDisplay.textContent = fileInput.files[0].name;
+                return _results
             }
-        });
+        }
     </script>
 @endsection

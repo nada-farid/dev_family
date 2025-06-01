@@ -305,6 +305,16 @@
                             </a>
                         </li>
                     @endcan
+                    @can('volunteer_task_access')
+                        <li class="c-sidebar-nav-item">
+                            <a href="{{ route("admin.volunteer-tasks.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/volunteer-tasks") || request()->is("admin/volunteer-tasks/*") ? "c-active" : "" }}">
+                                <i class="fa-fw fas fa-tasks c-sidebar-nav-icon">
+
+                                </i>
+                                {{ trans('cruds.volunteerTask.title') }}
+                            </a>
+                        </li>
+                    @endcan
                     @can('volunteer_guide_access')
                         <li class="c-sidebar-nav-item">
                             <a href="{{ route("admin.volunteer-guides.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/volunteer-guides") || request()->is("admin/volunteer-guides/*") ? "c-active" : "" }}">
