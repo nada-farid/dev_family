@@ -29,13 +29,14 @@
                         <label for="search">البحث في منصة المستفيدات</label>
                         <div style="display: flex">
                             <input class="form-control {{ $errors->has('search') ? 'is-invalid' : '' }}" type="text"
-                            name="search" id="search">
-                            <button class="btn btn-info" id="search-btn" type="button" onclick="search_for_beneficires()"> 
-                                <span id="spinner" class="spinner-border spinner-border-sm" role="status" style="display:none"></span>
+                                name="search" id="search">
+                            <button class="btn btn-info" id="search-btn" type="button" onclick="search_for_beneficires()">
+                                <span id="spinner" class="spinner-border spinner-border-sm" role="status"
+                                    style="display:none"></span>
                                 <span id="button-text">search</span>
                             </button>
                         </div>
-                    </div> 
+                    </div>
                     <div class="form-group col-md-6" id="search-result">
                         <label>نتيجة البحث</label>
                         <select class="form-control select2" name="result" id="result">
@@ -129,6 +130,18 @@
                     @endif
                     <span class="help-block">{{ trans('cruds.volunteerTask.fields.date_helper') }}</span>
                 </div>
+
+                <div class="form-group">
+                    <label class="required" for="link">{{ trans('cruds.volunteerTask.fields.link') }}</label>
+                    <input class="form-control  {{ $errors->has('link') ? 'is-invalid' : '' }}" type="text"
+                        name="link" id="link" value="{{ old('link') }}" required>
+                    @if ($errors->has('link'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('link') }}
+                        </div>
+                    @endif
+                    <span class="help-block">{{ trans('cruds.volunteerTask.fields.link_helper') }}</span>
+                </div>
                 <div class="form-group">
                     <button class="btn btn-danger" type="submit">
                         {{ trans('global.save') }}
@@ -137,4 +150,4 @@
             </form>
         </div>
     </div>
-@endsection 
+@endsection

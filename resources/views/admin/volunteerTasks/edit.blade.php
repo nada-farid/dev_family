@@ -99,6 +99,17 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.volunteerTask.fields.date_helper') }}</span>
             </div>
+              <div class="form-group">
+                    <label class="required" for="link">{{ trans('cruds.volunteerTask.fields.link') }}</label>
+                    <input class="form-control  {{ $errors->has('link') ? 'is-invalid' : '' }}" type="text"
+                        name="link" id="link" value="{{ old('link', $volunteerTask->link) }}" required>
+                    @if ($errors->has('link'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('link') }}
+                        </div>
+                    @endif
+                    <span class="help-block">{{ trans('cruds.volunteerTask.fields.link_helper') }}</span>
+                </div>
             <div class="form-group">
                 <label>{{ trans('cruds.volunteerTask.fields.status') }}</label>
                 <select class="form-control {{ $errors->has('status') ? 'is-invalid' : '' }}" name="status" id="status">

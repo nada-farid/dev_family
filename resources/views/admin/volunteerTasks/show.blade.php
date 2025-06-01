@@ -119,6 +119,14 @@
                             {{ $volunteerTask->notes }}
                         </td>
                     </tr>
+                     <tr>
+                        <th>
+                            {{ trans('cruds.volunteerTask.fields.link') }}
+                        </th>
+                        <td>
+                            {{ $volunteerTask->link }}
+                        </td>
+                    </tr>
                     <tr>
                         <th>
                             {{ trans('cruds.volunteerTask.fields.files') }}

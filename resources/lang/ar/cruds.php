@@ -764,6 +764,8 @@ return [
             'notes_helper' => ' ',
             'files' => 'المرفقات',
             'files_helper' => ' ',
+            'link' => 'رابط الفرصة التطوعية في منصة التطوع',
+            'link_helper' => '',
         ],
     ],
     'volunteer' => [

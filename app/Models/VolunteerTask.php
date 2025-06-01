@@ -53,6 +53,7 @@ class VolunteerTask extends Model implements HasMedia
         'status',
         'cancel_reason',
         'notes',
+        'link',
         'created_at',
         'updated_at',
         'deleted_at',
