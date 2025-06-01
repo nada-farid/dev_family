@@ -114,6 +114,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('volunteer-tasks/destroy', 'VolunteerTasksController@massDestroy')->name('volunteer-tasks.massDestroy');
     Route::get('volunteer-tasks/qr/{id}', 'VolunteerTasksController@qr')->name('volunteer-tasks.qr');
     Route::resource('volunteer-tasks', 'VolunteerTasksController');
+    Route::get('volunteers/{id}/info', 'VolunteerTasksController@getVolunteerInfo');
+
 
     // Members
     Route::delete('members/destroy', 'MembersController@massDestroy')->name('members.massDestroy');

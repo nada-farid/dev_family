@@ -151,3 +151,26 @@
         </div>
     </div>
 @endsection
+@section('scripts')
+<script>
+    $('#volunteer_id').on('change', function () {
+        var volunteerId = $(this).val();
+        if (volunteerId) {
+            $('#volunteer_id').prop('disabled', true);
+            $.ajax({
+                url: '/admin/volunteers/' + volunteerId + '/info',
+                type: 'GET',
+                success: function (data) {
+                    $('#name').val(data.name);
+                    $('#phone').val(data.phone);
+                    $('#identity').val(data.identity);
+                    $('#address').val(data.address);
+                },
+                complete: function () {
+                    $('#volunteer_id').prop('disabled', false);
+                }
+            });
+        }
+    });
+</script>
+@endsection

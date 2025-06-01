@@ -136,4 +136,16 @@ class VolunteerTasksController extends Controller
 
         return back();
     } 
+
+    public function getVolunteerInfo($id)
+{
+    $volunteer = Volunteer::findOrFail($id);
+
+    return response()->json([
+        'name'     => $volunteer->name,
+        'phone'    => $volunteer->phone_number,
+        'identity' => $volunteer->identity_num,
+    ]);
+}
+
 }
